@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 110 | Scripts: 16 | Modules: 0 | Tags: 0
+-- Instances: 116 | Scripts: 18 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.ScreenGui
@@ -17,6 +17,7 @@ G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 -- StarterGui.ScreenGui.Main
 G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["Visible"] = false;
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(128, 128, 128);
 G2L["2"]["Size"] = UDim2.new(0, 681, 0, 360);
@@ -1000,6 +1001,44 @@ G2L["6e"] = Instance.new("LocalScript", G2L["2"]);
 G2L["6e"]["Name"] = [[Smooth GUI Dragging]];
 
 
+-- StarterGui.ScreenGui.OpenScript
+G2L["6f"] = Instance.new("ImageButton", G2L["1"]);
+G2L["6f"]["BorderSizePixel"] = 0;
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["6f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6f"]["Image"] = [[rbxassetid://134033751538122]];
+G2L["6f"]["Size"] = UDim2.new(0, 58, 0, 48);
+G2L["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6f"]["Name"] = [[OpenScript]];
+G2L["6f"]["Position"] = UDim2.new(0.1053, 0, 0.44817, 0);
+
+
+-- StarterGui.ScreenGui.OpenScript.UIAspectRatioConstraint
+G2L["70"] = Instance.new("UIAspectRatioConstraint", G2L["6f"]);
+
+
+
+-- StarterGui.ScreenGui.OpenScript.UICorner
+G2L["71"] = Instance.new("UICorner", G2L["6f"]);
+
+
+
+-- StarterGui.ScreenGui.OpenScript.UIStroke
+G2L["72"] = Instance.new("UIStroke", G2L["6f"]);
+G2L["72"]["Thickness"] = 2;
+G2L["72"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- StarterGui.ScreenGui.OpenScript.Smooth GUI Dragging
+G2L["73"] = Instance.new("LocalScript", G2L["6f"]);
+G2L["73"]["Name"] = [[Smooth GUI Dragging]];
+
+
+-- StarterGui.ScreenGui.OpenScript.LocalScript
+G2L["74"] = Instance.new("LocalScript", G2L["6f"]);
+
+
+
 -- StarterGui.ScreenGui.Main.MenuFrame.HomeButton.LocalScript
 local function C_a()
 local script = G2L["a"];
@@ -1376,5 +1415,75 @@ local script = G2L["6e"];
 	runService.Heartbeat:Connect(Update)
 end;
 task.spawn(C_6e);
+-- StarterGui.ScreenGui.OpenScript.Smooth GUI Dragging
+local function C_73()
+local script = G2L["73"];
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+end;
+task.spawn(C_73);
+-- StarterGui.ScreenGui.OpenScript.LocalScript
+local function C_74()
+local script = G2L["74"];
+	local button = script.Parent -- ImageButton
+	local frame = button.Parent:FindFirstChild("Main") -- Ищем Frame внутри того же ScreenGui
+	
+	button.MouseButton1Click:Connect(function()
+		frame.Visible = not frame.Visible -- Переключаем видимость Frame
+	end)
+	
+end;
+task.spawn(C_74);
 
 return G2L["1"], require;
