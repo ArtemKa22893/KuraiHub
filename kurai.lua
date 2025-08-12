@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 133 | Scripts: 22 | Modules: 0 | Tags: 0
+-- Instances: 121 | Scripts: 22 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.ScreenGui
@@ -55,7 +55,6 @@ G2L["7"] = Instance.new("LocalScript", G2L["2"]);
 
 -- StarterGui.ScreenGui.Main
 G2L["8"] = Instance.new("Frame", G2L["1"]);
-G2L["8"]["Visible"] = false;
 G2L["8"]["BorderSizePixel"] = 0;
 G2L["8"]["BackgroundColor3"] = Color3.fromRGB(128, 128, 128);
 G2L["8"]["Size"] = UDim2.new(0, 681, 0, 360);
@@ -1011,29 +1010,28 @@ G2L["72"] = Instance.new("UICorner", G2L["71"]);
 G2L["72"]["CornerRadius"] = UDim.new(1, 0);
 
 
--- StarterGui.ScreenGui.Main.MenuFrame.GroupName
+-- StarterGui.ScreenGui.Main.MenuFrame.DragFrame
 G2L["73"] = Instance.new("Frame", G2L["b"]);
-G2L["73"]["Visible"] = false;
 G2L["73"]["BorderSizePixel"] = 0;
 G2L["73"]["BackgroundColor3"] = Color3.fromRGB(140, 140, 140);
-G2L["73"]["Size"] = UDim2.new(0, 205, 0, 53);
-G2L["73"]["Position"] = UDim2.new(3.56431, 0, -0.10833, 0);
+G2L["73"]["Size"] = UDim2.new(0, 180, 0, 17);
+G2L["73"]["Position"] = UDim2.new(-0.00285, 0, 0.95278, 0);
 G2L["73"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["73"]["Name"] = [[GroupName]];
+G2L["73"]["Name"] = [[DragFrame]];
 
 
--- StarterGui.ScreenGui.Main.MenuFrame.GroupName.UICorner
+-- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.UICorner
 G2L["74"] = Instance.new("UICorner", G2L["73"]);
 
 
 
--- StarterGui.ScreenGui.Main.MenuFrame.GroupName.UIStroke
+-- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.UIStroke
 G2L["75"] = Instance.new("UIStroke", G2L["73"]);
 G2L["75"]["Thickness"] = 2;
 G2L["75"]["Color"] = Color3.fromRGB(255, 255, 255);
 
 
--- StarterGui.ScreenGui.Main.MenuFrame.GroupName.NameTagScript
+-- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.NameTag
 G2L["76"] = Instance.new("TextLabel", G2L["73"]);
 G2L["76"]["TextWrapped"] = true;
 G2L["76"]["TextStrokeTransparency"] = 0;
@@ -1045,127 +1043,26 @@ G2L["76"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["76"]["FontFace"] = Font.new([[rbxasset://fonts/families/Kalam.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 G2L["76"]["TextColor3"] = Color3.fromRGB(112, 112, 112);
 G2L["76"]["BackgroundTransparency"] = 1;
-G2L["76"]["Size"] = UDim2.new(0, 135, 0, 54);
+G2L["76"]["Size"] = UDim2.new(0, 136, 0, 20);
 G2L["76"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["76"]["Text"] = [[Main]];
-G2L["76"]["Name"] = [[NameTagScript]];
-G2L["76"]["Position"] = UDim2.new(0.14518, 0, -0.03674, 0);
+G2L["76"]["Text"] = [[KuraiHub]];
+G2L["76"]["Name"] = [[NameTag]];
+G2L["76"]["Position"] = UDim2.new(0.12513, 0, 0, 0);
 
 
--- StarterGui.ScreenGui.Main.MenuFrame.GroupName.NameTagScript.UICorner
+-- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.NameTag.UICorner
 G2L["77"] = Instance.new("UICorner", G2L["76"]);
 
 
 
--- StarterGui.ScreenGui.Main.MenuFrame.GroupName.NameTagScript.UIStroke
+-- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.NameTag.UIStroke
 G2L["78"] = Instance.new("UIStroke", G2L["76"]);
 G2L["78"]["Color"] = Color3.fromRGB(255, 255, 255);
 
 
--- StarterGui.ScreenGui.Main.MenuFrame.GroupNameInformation
-G2L["79"] = Instance.new("Frame", G2L["b"]);
-G2L["79"]["Visible"] = false;
-G2L["79"]["BorderSizePixel"] = 0;
-G2L["79"]["BackgroundColor3"] = Color3.fromRGB(140, 140, 140);
-G2L["79"]["Size"] = UDim2.new(0, 205, 0, 53);
-G2L["79"]["Position"] = UDim2.new(3.56431, 0, -0.10833, 0);
-G2L["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["79"]["Name"] = [[GroupNameInformation]];
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.GroupNameInformation.UICorner
-G2L["7a"] = Instance.new("UICorner", G2L["79"]);
-
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.GroupNameInformation.UIStroke
-G2L["7b"] = Instance.new("UIStroke", G2L["79"]);
-G2L["7b"]["Thickness"] = 2;
-G2L["7b"]["Color"] = Color3.fromRGB(255, 255, 255);
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.GroupNameInformation.NameTagInfo
-G2L["7c"] = Instance.new("TextLabel", G2L["79"]);
-G2L["7c"]["TextWrapped"] = true;
-G2L["7c"]["TextStrokeTransparency"] = 0;
-G2L["7c"]["BorderSizePixel"] = 0;
-G2L["7c"]["TextSize"] = 14;
-G2L["7c"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["7c"]["TextScaled"] = true;
-G2L["7c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["7c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Kalam.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["7c"]["TextColor3"] = Color3.fromRGB(112, 112, 112);
-G2L["7c"]["BackgroundTransparency"] = 1;
-G2L["7c"]["Size"] = UDim2.new(0, 135, 0, 54);
-G2L["7c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7c"]["Text"] = [[Information]];
-G2L["7c"]["Name"] = [[NameTagInfo]];
-G2L["7c"]["Position"] = UDim2.new(0.16957, 0, -0.03674, 0);
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.GroupNameInformation.NameTagInfo.UICorner
-G2L["7d"] = Instance.new("UICorner", G2L["7c"]);
-
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.GroupNameInformation.NameTagInfo.UIStroke
-G2L["7e"] = Instance.new("UIStroke", G2L["7c"]);
-G2L["7e"]["Color"] = Color3.fromRGB(255, 255, 255);
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.DragFrame
-G2L["7f"] = Instance.new("Frame", G2L["b"]);
-G2L["7f"]["BorderSizePixel"] = 0;
-G2L["7f"]["BackgroundColor3"] = Color3.fromRGB(140, 140, 140);
-G2L["7f"]["Size"] = UDim2.new(0, 180, 0, 17);
-G2L["7f"]["Position"] = UDim2.new(-0.00285, 0, 0.95278, 0);
-G2L["7f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7f"]["Name"] = [[DragFrame]];
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.UICorner
-G2L["80"] = Instance.new("UICorner", G2L["7f"]);
-
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.UIStroke
-G2L["81"] = Instance.new("UIStroke", G2L["7f"]);
-G2L["81"]["Thickness"] = 2;
-G2L["81"]["Color"] = Color3.fromRGB(255, 255, 255);
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.NameTag
-G2L["82"] = Instance.new("TextLabel", G2L["7f"]);
-G2L["82"]["TextWrapped"] = true;
-G2L["82"]["TextStrokeTransparency"] = 0;
-G2L["82"]["BorderSizePixel"] = 0;
-G2L["82"]["TextSize"] = 14;
-G2L["82"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["82"]["TextScaled"] = true;
-G2L["82"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["82"]["FontFace"] = Font.new([[rbxasset://fonts/families/Kalam.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["82"]["TextColor3"] = Color3.fromRGB(112, 112, 112);
-G2L["82"]["BackgroundTransparency"] = 1;
-G2L["82"]["Size"] = UDim2.new(0, 136, 0, 20);
-G2L["82"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["82"]["Text"] = [[KuraiHub]];
-G2L["82"]["Name"] = [[NameTag]];
-G2L["82"]["Position"] = UDim2.new(0.12513, 0, 0, 0);
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.NameTag.UICorner
-G2L["83"] = Instance.new("UICorner", G2L["82"]);
-
-
-
--- StarterGui.ScreenGui.Main.MenuFrame.DragFrame.NameTag.UIStroke
-G2L["84"] = Instance.new("UIStroke", G2L["82"]);
-G2L["84"]["Color"] = Color3.fromRGB(255, 255, 255);
-
-
 -- StarterGui.ScreenGui.Main.Smooth GUI Dragging
-G2L["85"] = Instance.new("LocalScript", G2L["8"]);
-G2L["85"]["Name"] = [[Smooth GUI Dragging]];
+G2L["79"] = Instance.new("LocalScript", G2L["8"]);
+G2L["79"]["Name"] = [[Smooth GUI Dragging]];
 
 
 -- StarterGui.ScreenGui.OpenScript.Smooth GUI Dragging
@@ -1697,8 +1594,8 @@ local script = G2L["68"];
 end;
 task.spawn(C_68);
 -- StarterGui.ScreenGui.Main.Smooth GUI Dragging
-local function C_85()
-local script = G2L["85"];
+local function C_79()
+local script = G2L["79"];
 	local UserInputService = game:GetService("UserInputService")
 	local runService = (game:GetService("RunService"));
 	
@@ -1753,6 +1650,6 @@ local script = G2L["85"];
 	
 	runService.Heartbeat:Connect(Update)
 end;
-task.spawn(C_85);
+task.spawn(C_79);
 
 return G2L["1"], require;
